@@ -78,15 +78,17 @@ export default function ServiceCard({
         <CardContent className="flex-1 pt-4">
           <ul className="space-y-2.5">
             {details.map((detail, index) => (
-              <li key={index} className="flex items-start group/item">
+              <li key={index} className="flex items-start gap-2 group/item">
                 <span
                   className={cn(
-                    'mr-3 mt-1.5 h-2 w-2 rounded-full flex-shrink-0 transition-transform group-hover/item:scale-125',
+                    'text-lg font-bold flex-shrink-0 leading-tight',
                     accentClasses.bullet
                   )}
                   aria-hidden="true"
-                />
-                <span className="text-sm text-muted-foreground leading-relaxed">{detail}</span>
+                >
+                  •
+                </span>
+                <span className="text-sm text-muted-foreground leading-relaxed flex-1">{detail}</span>
               </li>
             ))}
           </ul>
