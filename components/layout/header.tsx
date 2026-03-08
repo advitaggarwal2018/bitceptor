@@ -1,13 +1,21 @@
 import Link from "next/link";
-import {MobileNav } from "./mobile-nav";
+import Image from "next/image";
+import { MobileNav } from "./mobile-nav";
 
 export function Header() {
     return(
         <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Company Logo/Name */}
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">Bitceptor</span>
+        <Link href="/" className="flex items-center space-x-3">
+        <Image 
+          src="/logo.jpeg"
+          alt ="Bitceptor Logo"
+          width={40}
+          height={40} 
+          className="h-10 w-10"
+        />
+          <span className="text-xl font-bold">Bitceptor Systems</span>
         </Link>
 
         {/* Desktop Navigation */}
