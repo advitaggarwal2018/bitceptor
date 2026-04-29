@@ -30,11 +30,11 @@ export default function ContactPage()
           <div className="space-y-4 mb-8">
             <div>
               <h2 className="font-semibold mb-1">Email</h2>
-              <p className="text-muted-foreground">[advit.aggarwal@bitceptor.com]</p>
+              <p className="text-muted-foreground">[help@bitceptor.com]</p>
             </div>
             <div>
               <h2 className="font-semibold mb-1">Phone</h2>
-              <p className="text-muted-foreground">[+91-9837003093]</p>
+              <p className="text-muted-foreground">[+91-9582800081]</p>
             </div>
           </div>
 
