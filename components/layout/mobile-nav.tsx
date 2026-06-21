@@ -14,11 +14,11 @@ export function MobileNav() {
     const [open, setOpen ] = useState(false);
 
     const navigationLinks = [
-        {href: "/", label: "Home" },
-        {href: "/offerings", label: "Offerings"},
-        {href: "/ai-solutions", label: "AI Solutions"},
-        {href: "/about", label: "About"},
-        {href: "/contact", label: "Contact"},
+        {href: "#home", label: "Home" },
+        {href: "#offerings", label: "Offerings"},
+        {href: "#ai-solutions", label: "AI Solutions"},
+        {href: "#about", label: "About"},
+        {href: "#contact", label: "Contact"},
     ];
     return(
         <Sheet open={open} onOpenChange={setOpen}>

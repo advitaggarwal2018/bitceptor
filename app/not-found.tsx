@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import Link from "next/link"
 import { Button } from "@/components/ui/button";
 
-export default function NotFouns() {
+export default function NotFound() {
     return (
     <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
       <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
@@ -15,7 +14,7 @@ export default function NotFouns() {
           <Link href="/">Return Home</Link>
         </Button>
         <Button variant="outline" asChild>
-          <Link href="/contact">Contact Us</Link>
+          <Link href="/#contact">Contact Us</Link>
         </Button>
       </div>
     </div>

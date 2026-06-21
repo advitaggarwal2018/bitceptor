@@ -15,7 +15,7 @@ export function ServiceOverview() {
       title: "IT Services & Solutions",
       description:
         "Comprehensive technology solutions for businesses of all sizes",
-      href: "/offerings",
+      href: "#offerings",
       buttonText: "Explore Offerings",
       accentColor: "blue",
       gradientFrom: "from-blue-50",
@@ -26,7 +26,7 @@ export function ServiceOverview() {
       title: "AI Solutions",
       description:
         "Cutting-edge artificial intelligence capabilities to transform your business",
-      href: "/ai-solutions",
+      href: "#ai-solutions",
       buttonText: "Discover AI",
       accentColor: "purple",
       gradientFrom: "from-purple-50",

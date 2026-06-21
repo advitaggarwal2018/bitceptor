@@ -7,7 +7,7 @@ export function Header() {
         <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-sm shadow-sm">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Company Logo/Name */}
-        <Link href="/" className="flex items-center space-x-3">
+        <Link href="#home" className="flex items-center space-x-3">
         <Image 
           src="/logo.jpeg"
           alt ="Bitceptor Logo"
@@ -21,31 +21,31 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
           <Link
-            href="/"
+            href="#home"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Home
           </Link>
           <Link
-            href="/offerings"
+            href="#offerings"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Offerings
           </Link>
           <Link
-            href="/ai-solutions"
+            href="#ai-solutions"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             AI Solutions
           </Link>
           <Link
-            href="/about"
+            href="#about"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             About
           </Link>
           <Link
-            href="/contact"
+            href="#contact"
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             Contact
