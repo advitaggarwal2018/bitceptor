@@ -61,3 +61,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Smooth theme transition for backgrounds, text, and borders */
+body, header, footer, section, input, textarea, button, a, div {
+  transition-property: background-color, border-color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
