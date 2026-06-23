@@ -83,7 +83,7 @@ function BitceptorLogo({ size = 36 }: { size?: number }) {
 
 const navLinks = [
   { href: "#home", label: "Home" },
-  { href: "#offerings", label: "Offerings" },
+  { href: "#services", label: "Services" },
   { href: "#ai-solutions", label: "AI Solutions" },
   { href: "#about", label: "About" },
 ];

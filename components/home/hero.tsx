@@ -102,7 +102,7 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="#offerings"
+                href="#services"
                 className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 text-slate-800 hover:bg-slate-100 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10 px-6 py-3 text-sm font-semibold backdrop-blur-sm transition-all duration-150 hover:scale-105"
               >
                 Explore Services
