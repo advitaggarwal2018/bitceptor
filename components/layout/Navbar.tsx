@@ -46,25 +46,25 @@ export function Navbar() {
                     {/* Desktop nav */}
                     <nav className="hidden md:flex items-center gap-1">
                         {navLinks.map((link) => (
-                            <Link
+                            <a
                                 key={link.href}
                                 href={link.href}
                                 className="relative px-3.5 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-150 rounded-md hover:bg-slate-100/70 dark:hover:bg-slate-800/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 group"
                             >
                                 {link.label}
                                 <span className="absolute bottom-1 left-3.5 right-3.5 h-[1.5px] rounded-full bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
-                            </Link>
+                            </a>
                         ))}
                     </nav>
 
                     {/* Desktop CTA */}
                     <div className="hidden md:flex items-center gap-3">
-                        <Link
+                        <a
                             href="#contact"
                             className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 dark:bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/20 dark:shadow-blue-500/10 hover:bg-blue-500 dark:hover:bg-blue-400 transition-all duration-200 hover:scale-105 active:scale-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                         >
                             Get in Touch
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Mobile menu toggle */}
@@ -85,23 +85,23 @@ export function Navbar() {
             >
                 <nav className="flex flex-col gap-1 px-4 py-4">
                     {navLinks.map((link) => (
-                        <Link
+                        <a
                             key={link.href}
                             href={link.href}
                             onClick={() => setOpen(false)}
                             className="px-3 py-2.5 text-sm font-medium rounded-lg text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors duration-150"
                         >
                             {link.label}
-                        </Link>
+                        </a>
                     ))}
 
-                    <Link
+                    <a
                         href="#contact"
                         onClick={() => setOpen(false)}
                         className="mt-2 inline-flex items-center justify-center rounded-lg bg-blue-600 dark:bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-500 dark:hover:bg-blue-400 transition-colors duration-150"
                     >
                         Get in Touch
-                    </Link>
+                    </a>
                 </nav>
             </div>
         </header>

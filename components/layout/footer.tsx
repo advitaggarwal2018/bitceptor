@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, ArrowRight, Linkedin, Twitter, Github, Instagram } from "lucide-react";
 import {
   Sheet,
@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import logo from "@/public/Assets/logo.jpeg";
 
 // ── Inline SVG logo (same as header) ──────────────────────────────────────
 function BitceptorLogo({ size = 32 }: { size?: number }) {
@@ -70,36 +71,38 @@ export function Footer() {
               </p>
             </div>
 
-            <Link
+            <a
               href="#contact"
               className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-none hover:bg-blue-500 transition-colors duration-150"
             >
               Get in Touch
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>
 
       {/* ── Main footer body ───────────────────────────────────────────── */}
-      <div className="bg-slate-900 text-slate-300">
+      <div className="bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-850/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
             {/* Col 1 — Brand */}
             <div className="space-y-5">
-              <Link href="#home" className="flex items-center gap-2.5">
-                <BitceptorLogo size={34} />
+              <a href="#home" className="flex items-center gap-2.5 group">
+                <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-md shadow-blue-500/10 transition-transform duration-200 group-hover:scale-105">
+                  <Image src={logo} alt="Bitceptor" width={32} height={32} className="object-cover" />
+                </div>
                 <div className="flex flex-col leading-none">
-                  <span className="text-[0.95rem] font-bold tracking-[0.12em] uppercase text-white">
+                  <span className="text-[0.95rem] font-bold tracking-[0.12em] uppercase text-slate-900 dark:text-white">
                     Bitceptor
                   </span>
-                  <span className="text-[0.55rem] font-medium tracking-[0.22em] uppercase text-slate-400 mt-0.5">
+                  <span className="text-[0.55rem] font-medium tracking-[0.22em] uppercase text-slate-500 dark:text-slate-400 mt-0.5">
                     Systems
                   </span>
                 </div>
-              </Link>
-              <p className="text-sm text-slate-400 leading-relaxed max-w-[220px]">
+              </a>
+              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-[220px]">
                 Engineering intelligent systems for the future — your trusted partner in IT and AI innovation.
               </p>
               {/* Social icons */}
@@ -109,7 +112,7 @@ export function Footer() {
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="w-9 h-9 rounded-lg border border-slate-700 bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 hover:bg-blue-600/20 transition-all duration-150"
+                    className="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-all duration-150"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -119,18 +122,18 @@ export function Footer() {
 
             {/* Col 2 — Links */}
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400 mb-5">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-900 dark:text-slate-400 mb-5">
                 Links
               </h4>
               <ul className="space-y-3">
                 {navLinks.map(({ label, href }) => (
                   <li key={href}>
-                    <Link
+                    <a
                       href={href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors duration-150"
+                      className="text-sm text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-white transition-colors duration-150"
                     >
                       {label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -138,19 +141,19 @@ export function Footer() {
 
             {/* Col 3 — Contact */}
             <div>
-              <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400 mb-5">
+              <h4 className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-900 dark:text-slate-400 mb-5">
                 Contact Us
               </h4>
-              <p className="text-sm text-slate-400 leading-relaxed mb-5 max-w-[220px]">
+              <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5 max-w-[220px]">
                 Have a project in mind? Reach out and we&apos;ll get back to you within 24 hours.
               </p>
               <ul className="space-y-3">
                 <li>
                   <a
                     href="mailto:advit.aggarwal@bitceptor.com"
-                    className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-white transition-colors duration-150 group"
+                    className="flex items-center gap-2.5 text-sm text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-white transition-colors duration-150 group"
                   >
-                    <div className="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500 group-hover:bg-blue-600/20 transition-all">
+                    <div className="w-7 h-7 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500 dark:group-hover:border-blue-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 transition-all">
                       <Mail className="w-3.5 h-3.5" />
                     </div>
                     advit.aggarwal@bitceptor.com
@@ -159,9 +162,9 @@ export function Footer() {
                 <li>
                   <a
                     href="tel:+919837003093"
-                    className="flex items-center gap-2.5 text-sm text-slate-400 hover:text-white transition-colors duration-150 group"
+                    className="flex items-center gap-2.5 text-sm text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-white transition-colors duration-150 group"
                   >
-                    <div className="w-7 h-7 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500 group-hover:bg-blue-600/20 transition-all">
+                    <div className="w-7 h-7 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center flex-shrink-0 group-hover:border-blue-500 dark:group-hover:border-blue-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/30 transition-all">
                       <Phone className="w-3.5 h-3.5" />
                     </div>
                     +91-9837003093
@@ -173,14 +176,14 @@ export function Footer() {
           </div>
 
           {/* ── Bottom bar ── */}
-          <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-slate-500">
+          <div className="mt-12 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               &copy; {currentYear} Bitceptor Systems. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <Sheet open={privacyOpen} onOpenChange={setPrivacyOpen}>
                 <SheetTrigger asChild>
-                  <button className="text-xs text-slate-500 hover:text-slate-300 transition-colors focus:outline-none cursor-pointer bg-transparent border-0 p-0">
+                  <button className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors focus:outline-none cursor-pointer bg-transparent border-0 p-0">
                     Privacy Policy
                   </button>
                 </SheetTrigger>
@@ -245,8 +248,8 @@ export function Footer() {
                 </SheetContent>
               </Sheet>
 
-              <span className="text-slate-700 text-xs">|</span>
-              <span className="text-xs text-slate-500">
+              <span className="text-slate-300 dark:text-slate-800 text-xs">|</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">
                 Made with ♥ in India
               </span>
             </div>

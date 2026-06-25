@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, Cpu } from "lucide-react";
 import { HeroIllustration } from "@/public/Assets/HeroIllustration";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -64,19 +63,19 @@ export function Hero() {
 
             <ScrollReveal animation="fade-up" delay={300} duration={600}>
               <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start justify-center lg:justify-start">
-                <Link
+                <a
                   href="#contact"
                   className="inline-flex items-center gap-2 rounded-lg bg-blue-600 dark:bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 dark:shadow-blue-500/10 transition-all hover:bg-blue-500 dark:hover:bg-blue-400 hover:scale-105 active:scale-100 duration-200"
                 >
                   Get in Touch
                   <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
+                </a>
+                <a
                   href="#services"
                   className="inline-flex items-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700/80 bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:scale-105 active:scale-100"
                 >
                   Explore Services
-                </Link>
+                </a>
               </div>
             </ScrollReveal>
 
