@@ -52,7 +52,7 @@ export function AISolutionsSection() {
     return (
         <section
             id="ai-solutions"
-            className="w-full py-16 md:py-24 bg-[#F7F7FA] dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
+            className="w-full py-16 md:py-24 bg-[#F7F7FA] dark:bg-slate-900 transition-colors duration-300"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

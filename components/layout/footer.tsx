@@ -55,27 +55,29 @@ export function Footer() {
     <footer className="w-full">
 
       {/* ── CTA Banner ─────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div
-          className="relative rounded-2xl overflow-hidden px-8 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border bg-gradient-to-br from-blue-50 to-green-50 border-blue-200 dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 dark:border-slate-800 transition-all duration-300"
-        >
-          <div>
-            <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug max-w-sm">
-              Ready to build something{" "}
-              <span className="text-blue-600 dark:text-blue-400">intelligent</span> together?
-            </h3>
-            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xs">
-              Let&apos;s talk about how Bitceptor can help transform your business with technology.
-            </p>
-          </div>
-
-          <Link
-            href="#contact"
-            className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-none hover:bg-blue-500 transition-colors duration-150"
+      <div className="w-full bg-white dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div
+            className="relative rounded-2xl overflow-hidden px-8 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border bg-gradient-to-br from-blue-50 to-green-50 border-blue-200 dark:from-slate-900/80 dark:via-slate-900/50 dark:to-blue-900/20 dark:border-slate-800 transition-all duration-300"
           >
-            Get in Touch
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            <div>
+              <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug max-w-sm">
+                Ready to build something{" "}
+                <span className="text-blue-600 dark:text-blue-400">intelligent</span> together?
+              </h3>
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xs">
+                Let&apos;s talk about how Bitceptor can help transform your business with technology.
+              </p>
+            </div>
+
+            <Link
+              href="#contact"
+              className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-none hover:bg-blue-500 transition-colors duration-150"
+            >
+              Get in Touch
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
 

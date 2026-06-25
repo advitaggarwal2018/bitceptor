@@ -12,13 +12,13 @@ const valueAccents: Record<string, { accent: string; bg: string }> = {
   Innovation: { accent: "#2563eb", bg: "rgba(37,99,235,0.08)" },
   Excellence: { accent: "#d97706", bg: "rgba(217,119,6,0.08)" },
   Partnership: { accent: "#059669", bg: "rgba(5,150,105,0.08)" },
-  Integrity:   { accent: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
+  Integrity: { accent: "#7c3aed", bg: "rgba(124,58,237,0.08)" },
 };
 
 const stats = [
   { value: "2024", label: "Founded" },
-  { value: "50+",  label: "Client Integrations" },
-  { value: "5+",   label: "Industries Served" },
+  { value: "50+", label: "Client Integrations" },
+  { value: "5+", label: "Industries Served" },
   { value: "100%", label: "Commitment" },
 ];
 
@@ -26,7 +26,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full py-16 md:py-24 bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
+      className="w-full py-16 md:py-24 bg-white dark:bg-slate-950 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 

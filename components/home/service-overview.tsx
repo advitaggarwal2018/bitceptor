@@ -65,7 +65,7 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
     }
 
     const gap = 20;
-    const cardWidth = 288 + gap; // card w-72 = 288px + gap
+    const cardWidth = 288 + gap;
     const idx = Math.round(track.scrollLeft / cardWidth);
     setActiveIndex(Math.min(Math.max(idx, 0), total - 1));
   }
@@ -84,7 +84,7 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     scrollTimeout.current = setTimeout(() => {
       isProgrammaticScroll.current = false;
-    }, 500); // Smooth scroll transition duration window
+    }, 500);
   }
 
   function handlePrev() {
@@ -107,13 +107,12 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
     return () => {
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <section
       id={id}
-      className="py-16 md:py-24 overflow-hidden animate-fade-in bg-[#F9F9FF] dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
+      className="py-16 md:py-24 overflow-hidden bg-[#F9F9FF] dark:bg-slate-900 transition-colors duration-300"
     >
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">

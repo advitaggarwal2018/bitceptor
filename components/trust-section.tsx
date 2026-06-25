@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowRight, Play } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import industryImg from "@/public/Assets/Industry.svg";
 
 export function TrustSection() {
-  const [hovered, setHovered] = useState(false);
-
   return (
-    <section className="w-full py-16 md:py-24 bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300">
+    <section className="w-full py-16 md:py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -36,57 +36,26 @@ export function TrustSection() {
               support.
             </p>
 
-            <a
+            <Link
               href="#about"
               className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors group"
             >
               See more information
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
 
-          {/* RIGHT — image / video panel */}
+          {/* RIGHT — image panel */}
           <div className="relative">
             {/* Main image container */}
-            <div
-              className="relative rounded-2xl overflow-hidden cursor-pointer border border-slate-100 dark:border-slate-800"
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
-              {/* Placeholder image — replace src with real team photo */}
-              <div
-                className="w-full aspect-[4/3] bg-gradient-to-br from-slate-200 via-slate-100 to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/40 flex items-center justify-center"
-                style={{ minHeight: "280px" }}
-              >
-                {/* Replace the div below with <Image src="..." ... /> when you have a real photo */}
-                <div className="text-center space-y-2 opacity-40 select-none">
-                  <div className="w-16 h-16 rounded-full bg-slate-300 dark:bg-slate-700 mx-auto" />
-                  <div className="w-32 h-2 rounded bg-slate-300 dark:bg-slate-700 mx-auto" />
-                  <div className="w-24 h-2 rounded bg-slate-200 dark:bg-slate-600 mx-auto" />
-                </div>
-              </div>
-
-              {/* Overlay on hover */}
-              <div
-                className="absolute inset-0 bg-slate-900/10 transition-opacity duration-300"
-                style={{ opacity: hovered ? 1 : 0 }}
+            <div className="relative w-full aspect-[4/3] overflow-hidden transition-all duration-300">
+              <Image
+                src={industryImg}
+                alt="Industry Experience"
+                fill
+                priority
+                className="object-contain transition-all duration-300 dark:opacity-85 dark:brightness-90 dark:contrast-110"
               />
-
-              {/* Play button */}
-              <button
-                className="absolute inset-0 flex items-center justify-center focus:outline-none"
-                aria-label="Play video"
-              >
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-transform duration-200"
-                  style={{
-                    background: "linear-gradient(135deg,#2563eb,#7c3aed)",
-                    transform: hovered ? "scale(1.10)" : "scale(1)",
-                  }}
-                >
-                  <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                </div>
-              </button>
             </div>
 
             {/* Floating stat badge */}

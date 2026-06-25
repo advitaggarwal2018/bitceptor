@@ -8,6 +8,7 @@ import { ApproachSection } from "@/components/approach-section";
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contactUs-section";
 import { AISolutionsSection } from "@/components/aiSolution-section";
+import { ClientsSection } from "@/components/our-client";
 
 export const metadata: Metadata = {
   title: 'Bitceptor Systems | Engineering Intelligent Systems for the Future',
@@ -28,6 +29,7 @@ export default function Home() {
       <ServiceOverview id="services" />
       <TrustSection />
       <ApproachSection />
+      <ClientsSection />
       <AISolutionsSection />
       <AboutSection />
       <ContactSection />
