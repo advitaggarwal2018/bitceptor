@@ -30,6 +30,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -63,7 +64,15 @@ html {
 }
 
 /* Smooth theme transition for backgrounds, text, and borders */
-body, header, footer, section, input, textarea, button, a, div {
+body,
+header,
+footer,
+section,
+input,
+textarea,
+button,
+a,
+div {
   transition-property: background-color, border-color, fill, stroke;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

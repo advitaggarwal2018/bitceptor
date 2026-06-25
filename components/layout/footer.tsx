@@ -57,36 +57,21 @@ export function Footer() {
       {/* ── CTA Banner ─────────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div
-          className="relative rounded-2xl overflow-hidden px-8 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
-          style={{ background: "linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%)", border: "2px solid #bfdbfe" }}
+          className="relative rounded-2xl overflow-hidden px-8 md:px-12 py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border bg-gradient-to-br from-blue-50 to-green-50 border-blue-200 dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 dark:border-slate-800 transition-all duration-300"
         >
-          {/* Decorative sparks */}
-          <div className="pointer-events-none absolute right-32 top-6 opacity-60 hidden sm:block">
-            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-              <line x1="30" y1="5" x2="30" y2="18" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="30" y1="42" x2="30" y2="55" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="5" y1="30" x2="18" y2="30" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="42" y1="30" x2="55" y2="30" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" />
-              <line x1="12" y1="12" x2="21" y2="21" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-              <line x1="39" y1="39" x2="48" y2="48" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-              <line x1="48" y1="12" x2="39" y2="21" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-              <line x1="21" y1="39" x2="12" y2="48" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
-
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug max-w-sm">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug max-w-sm">
               Ready to build something{" "}
-              <span className="text-blue-600">intelligent</span> together?
+              <span className="text-blue-600 dark:text-blue-400">intelligent</span> together?
             </h3>
-            <p className="mt-2 text-sm text-slate-500 max-w-xs">
+            <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-xs">
               Let&apos;s talk about how Bitceptor can help transform your business with technology.
             </p>
           </div>
 
           <Link
             href="#contact"
-            className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 hover:bg-blue-500 transition-colors duration-150"
+            className="flex-shrink-0 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-200 dark:shadow-none hover:bg-blue-500 transition-colors duration-150"
           >
             Get in Touch
             <ArrowRight className="w-4 h-4" />

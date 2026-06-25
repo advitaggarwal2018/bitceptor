@@ -41,19 +41,18 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="w-full py-16 md:py-24"
-      style={{ background: "#F7F7FA" }}
+      className="w-full py-16 md:py-24 bg-[#F7F7FA] dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Heading ── */}
         <div className="mb-12">
           <div className="w-10 h-1 rounded-full bg-blue-600 mb-6" />
-          <p className="text-2xl md:text-3xl text-slate-600 font-normal">Get in</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-1">
+          <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal">Get in</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
             Touch with Us
           </h2>
-          <p className="mt-4 text-base text-slate-500 max-w-xl leading-relaxed">
+          <p className="mt-4 text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
             We&apos;re here to help with your IT services and AI solutions needs.
             Reach out to discuss how we can support your business goals.
           </p>
@@ -78,7 +77,7 @@ export function ContactSection() {
                       {item.label}
                     </p>
                     <p
-                      className="text-sm font-semibold text-slate-800 mt-0.5"
+                      className="text-sm font-semibold text-slate-800 dark:text-white mt-0.5"
                       style={item.href ? { color: item.accent } : {}}
                     >
                       {item.value}
@@ -91,14 +90,14 @@ export function ContactSection() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-white px-5 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none"
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={item.label}
-                  className="rounded-xl border border-slate-100 bg-white px-5 py-4"
+                  className="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4"
                 >
                   {inner}
                 </div>
@@ -106,23 +105,23 @@ export function ContactSection() {
             })}
 
             {/* Response time note */}
-            <div className="rounded-xl border border-blue-100 bg-blue-50 px-5 py-4">
-              <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-1">
+            <div className="rounded-xl border border-blue-100 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-950/20 px-5 py-4">
+              <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1">
                 Response Time
               </p>
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 We typically respond within{" "}
-                <span className="font-semibold text-blue-600">24 hours</span>. For
+                <span className="font-semibold text-blue-600 dark:text-blue-400">24 hours</span>. For
                 urgent matters, please call us directly.
               </p>
             </div>
           </div>
 
           {/* RIGHT — contact form */}
-          <div className="rounded-2xl border border-slate-100 bg-white shadow-sm p-7 md:p-8">
+          <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-sm p-7 md:p-8">
             <div className="mb-6">
-              <h3 className="text-lg font-bold text-slate-900">Send us a message</h3>
-              <p className="text-sm text-slate-500 mt-1">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Send us a message</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                 Fill out the form and we&apos;ll get back to you shortly.
               </p>
             </div>

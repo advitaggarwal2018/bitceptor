@@ -113,27 +113,26 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
   return (
     <section
       id={id}
-      className="py-16 md:py-24 overflow-hidden animate-fade-in"
-      style={{ background: "#F9F9FF" }}
+      className="py-16 md:py-24 overflow-hidden animate-fade-in bg-[#F9F9FF] dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
     >
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500 mb-3">
           What We Do
         </p>
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
               Services we offer
             </h2>
-            <p className="mt-3 text-base text-slate-500 max-w-xl">
+            <p className="mt-3 text-base text-slate-500 dark:text-slate-400 max-w-xl">
               We deliver enterprise-grade IT solutions that empower businesses to
               innovate, scale, and succeed in the digital landscape.
             </p>
           </div>
           <a
             href={`#${id}`}
-            className="flex-shrink-0 text-sm font-semibold text-blue-600 hover:text-blue-500 transition-colors"
+            className="flex-shrink-0 text-sm font-semibold text-blue-600 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
           >
             View all services →
           </a>
@@ -164,50 +163,50 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
                   e.preventDefault();
                   scrollToIndex(i);
                 }}
-                className="group flex-none w-72 rounded-2xl border bg-white transition-all duration-300 focus:outline-none cursor-pointer"
+                className="group flex-none w-72 rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 shadow-sm dark:shadow-none transition-all duration-300 focus:outline-none cursor-pointer"
                 style={{
-                  borderColor: isActive ? svc.accent : "#e2e8f0",
+                  borderColor: isActive ? svc.accent : undefined,
                   boxShadow: isActive
                     ? `0 12px 36px rgba(0,0,0,0.10), 0 0 0 1.5px ${svc.accent}30`
-                    : "0 1px 4px rgba(0,0,0,0.05)",
-                  transform: isActive ? "translateY(-8px)" : "translateY(0)",
+                    : undefined,
+                  transform: isActive ? "translateY(-8px)" : undefined,
                 }}
               >
                 <div className="p-7 flex flex-col h-full min-h-[280px]">
                   {/* Icon */}
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors duration-200"
-                    style={{ background: isActive ? svc.accentBg : "#f1f5f9" }}
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-colors duration-200 bg-[#f1f5f9] dark:bg-slate-800/80"
+                    style={{ background: isActive ? svc.accentBg : undefined }}
                   >
                     <Icon
-                      className="w-5 h-5 transition-colors duration-200"
-                      style={{ color: isActive ? svc.accent : "#94a3b8" }}
+                      className="w-5 h-5 transition-colors duration-200 text-[#94a3b8] dark:text-slate-400"
+                      style={{ color: isActive ? svc.accent : undefined }}
                     />
                   </div>
 
                   {/* Title */}
                   <h3
-                    className="text-base font-semibold mb-2 leading-snug transition-colors duration-200"
-                    style={{ color: isActive ? svc.accent : "#1e293b" }}
+                    className="text-base font-semibold mb-2 leading-snug transition-colors duration-200 text-slate-800 dark:text-white"
+                    style={{ color: isActive ? svc.accent : undefined }}
                   >
                     {svc.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-500 leading-relaxed mb-5">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5">
                     {svc.description}
                   </p>
 
                   {/* Detail bullets */}
                   <ul className="mt-auto space-y-2">
-                    {svc.details.map((detail) => (
+                    {svc.details?.map((detail) => (
                       <li
                         key={detail}
-                        className="flex items-start gap-2 text-xs text-slate-500"
+                        className="flex items-start gap-2 text-xs text-slate-500 dark:text-slate-400"
                       >
                         <CheckCircle2
-                          className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 transition-colors duration-200"
-                          style={{ color: isActive ? svc.accent : "#cbd5e1" }}
+                          className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 transition-colors duration-200 text-slate-300 dark:text-slate-600"
+                          style={{ color: isActive ? svc.accent : undefined }}
                         />
                         {detail}
                       </li>
@@ -249,7 +248,7 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
             <button
               onClick={handlePrev}
               disabled={activeIndex === 0}
-              className="w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+              className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-850 flex items-center justify-center text-slate-600 dark:text-slate-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
               aria-label="Previous service"
             >
               <ChevronLeft className="w-4.5 h-4.5" />
@@ -257,7 +256,7 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
             <button
               onClick={handleNext}
               disabled={activeIndex === total - 1}
-              className="w-9 h-9 rounded-full border border-slate-200 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
+              className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-850 flex items-center justify-center text-slate-600 dark:text-slate-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 shadow-sm"
               aria-label="Next service"
             >
               <ChevronRight className="w-4.5 h-4.5" />
@@ -266,16 +265,16 @@ export function ServiceOverview({ id = "services" }: { id?: string }) {
 
           {/* Progress counter + bar */}
           <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold tabular-nums text-slate-400">
+            <span className="text-xs font-semibold tabular-nums text-slate-400 dark:text-slate-500">
               {String(activeIndex + 1).padStart(2, "0")}
             </span>
-            <div className="w-24 h-[3px] rounded-full bg-slate-200 relative overflow-hidden">
+            <div className="w-24 h-[3px] rounded-full bg-slate-200 dark:bg-slate-800 relative overflow-hidden">
               <div
                 className="absolute inset-y-0 left-0 bg-blue-600 rounded-full transition-all duration-300"
                 style={{ width: `${progress * 100}%` }}
               />
             </div>
-            <span className="text-xs font-semibold tabular-nums text-slate-400">
+            <span className="text-xs font-semibold tabular-nums text-slate-400 dark:text-slate-500">
               {String(total).padStart(2, "0")}
             </span>
           </div>

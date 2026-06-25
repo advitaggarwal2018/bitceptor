@@ -52,33 +52,32 @@ export function AISolutionsSection() {
     return (
         <section
             id="ai-solutions"
-            className="w-full py-16 md:py-24"
-            style={{ background: "#F7F7FA" }}
+            className="w-full py-16 md:py-24 bg-[#F7F7FA] dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* ── Heading ── */}
                 <div className="mb-14">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-purple-600 mb-6">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 dark:border-purple-800/50 bg-purple-50 dark:bg-purple-950/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-purple-600 dark:text-purple-400 mb-6">
                         <Sparkles className="w-3.5 h-3.5" />
                         Artificial Intelligence
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                         <div>
-                            <p className="text-2xl md:text-3xl text-slate-600 font-normal leading-snug">
+                            <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 font-normal leading-snug">
                                 Harness the power of
                             </p>
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-1 leading-snug">
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1 leading-snug">
                                 AI Solutions
                             </h2>
-                            <p className="mt-4 text-base text-slate-500 max-w-xl leading-relaxed">
+                            <p className="mt-4 text-base text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed">
                                 Transform your business operations, unlock new insights, and drive
                                 intelligent automation with cutting-edge artificial intelligence.
                             </p>
                         </div>
                         <a
                             href="#contact"
-                            className="flex-shrink-0 text-sm font-semibold text-purple-600 hover:text-purple-500 transition-colors"
+                            className="flex-shrink-0 text-sm font-semibold text-purple-600 hover:text-purple-500 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
                         >
                             Discuss a project →
                         </a>
@@ -92,7 +91,7 @@ export function AISolutionsSection() {
                         return (
                             <div
                                 key={sol.id}
-                                className="group relative rounded-2xl border border-slate-100 bg-white p-7 flex flex-col gap-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                                className="group relative rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-7 flex flex-col gap-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                             >
                                 {/* Subtle top gradient bar */}
                                 <div
@@ -120,21 +119,21 @@ export function AISolutionsSection() {
                                         >
                                             {sol.title}
                                         </h3>
-                                        <p className="mt-1.5 text-sm text-slate-500 leading-relaxed">
+                                        <p className="mt-1.5 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                                             {sol.description}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Divider */}
-                                <div className="h-px bg-slate-100" />
+                                <div className="h-px bg-slate-100 dark:bg-slate-800" />
 
                                 {/* Detail bullets */}
                                 <ul className="space-y-2.5">
-                                    {sol.details.map((detail) => (
+                                    {sol.details?.map((detail) => (
                                         <li
                                             key={detail}
-                                            className="flex items-start gap-2.5 text-xs text-slate-500"
+                                            className="flex items-start gap-2.5 text-xs text-slate-500 dark:text-slate-400"
                                         >
                                             <CheckCircle2
                                                 className="w-3.5 h-3.5 mt-0.5 flex-shrink-0"
@@ -179,7 +178,7 @@ export function AISolutionsSection() {
                     </div>
                     <a
                         href="#contact"
-                        className="relative flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-purple-700 shadow hover:bg-purple-50 transition-colors duration-150"
+                        className="relative flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white dark:bg-slate-900/60 dark:hover:bg-slate-900 hover:bg-purple-50 transition-colors duration-150 border border-slate-100/10 dark:border-slate-800 px-6 py-3 text-sm font-semibold text-purple-700 dark:text-purple-300 shadow"
                     >
                         <Sparkles className="w-4 h-4" />
                         Start a Conversation

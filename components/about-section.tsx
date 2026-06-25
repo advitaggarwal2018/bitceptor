@@ -26,18 +26,18 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full py-16 md:py-24 bg-white"
+      className="w-full py-16 md:py-24 bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900/60 dark:to-blue-950/20 transition-all duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
         {/* ── Heading ── */}
         <div className="text-center">
           <div className="w-10 h-1 rounded-full bg-blue-600 mx-auto mb-6" />
-          <p className="text-2xl md:text-3xl text-slate-600 font-normal">About</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-1">
+          <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal">About</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
             Bitceptor Systems
           </h2>
-          <p className="mt-4 text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             Learn about our mission, values, and commitment to delivering innovative
             IT and AI solutions.
           </p>
@@ -47,15 +47,15 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left — text */}
           <div className="space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800/50 bg-blue-50 dark:bg-blue-950/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               <Users className="w-3.5 h-3.5" />
               Our Story
             </div>
-            <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
               From a small consultancy to a{" "}
-              <span className="text-blue-600">leading IT & AI provider</span>
+              <span className="text-blue-600 dark:text-blue-400">leading IT & AI provider</span>
             </h3>
-            <p className="text-slate-500 leading-relaxed text-sm md:text-base">
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm md:text-base">
               {aboutInfo.background}
             </p>
           </div>
@@ -65,10 +65,10 @@ export function AboutSection() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-slate-100 bg-slate-50 p-6 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 p-6 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <p className="text-3xl font-bold text-blue-600">{s.value}</p>
-                <p className="mt-1 text-xs font-medium text-slate-500 uppercase tracking-wider">
+                <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">{s.value}</p>
+                <p className="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   {s.label}
                 </p>
               </div>
@@ -115,7 +115,7 @@ export function AboutSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-2">
               What Drives Us
             </p>
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
               Our Values
             </h3>
           </div>
@@ -128,7 +128,7 @@ export function AboutSection() {
               return (
                 <div
                   key={title}
-                  className="group flex items-start gap-5 rounded-2xl border border-slate-100 bg-white p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex items-start gap-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200"
@@ -146,7 +146,7 @@ export function AboutSection() {
                     >
                       {title}
                     </h4>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                       {description}
                     </p>
                   </div>
