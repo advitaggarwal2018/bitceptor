@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Layers,
   Users,
@@ -6,6 +8,7 @@ import {
   Code2,
   CheckSquare,
 } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const approaches = [
   {
@@ -72,7 +75,7 @@ export function ApproachSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Centered heading */}
-        <div className="text-center mb-14">
+        <ScrollReveal animation="fade-up" duration={500} className="text-center mb-14">
           <div className="w-10 h-1 rounded-full bg-blue-600 mx-auto mb-6" />
           <h2 className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 font-normal leading-snug">
             Our design and
@@ -80,38 +83,44 @@ export function ApproachSection() {
           <p className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white leading-snug">
             development approach
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* 2-col card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {approaches.map((item) => {
+          {approaches.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div
+              <ScrollReveal
                 key={item.id}
-                className="group flex items-start gap-5 bg-white dark:bg-slate-900/60 rounded-2xl border border-slate-100 dark:border-slate-800/80 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                animation="fade-up"
+                delay={i * 75}
+                duration={550}
               >
-                {/* Icon box */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: item.iconBg }}
+                  className="group flex items-start gap-5 bg-white dark:bg-slate-900/60 rounded-2xl border border-slate-100 dark:border-slate-800/80 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 h-full"
                 >
-                  <Icon
-                    className="w-5 h-5"
-                    style={{ color: item.iconColor }}
-                  />
-                </div>
+                  {/* Icon box */}
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: item.iconBg }}
+                  >
+                    <Icon
+                      className="w-5 h-5"
+                      style={{ color: item.iconColor }}
+                    />
+                  </div>
 
-                {/* Text */}
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                    {item.description}
-                  </p>
+                  {/* Text */}
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-900 dark:text-white mb-2 leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

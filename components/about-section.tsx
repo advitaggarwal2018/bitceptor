@@ -1,5 +1,8 @@
+"use client";
+
 import { aboutInfo } from "@/lib/data/about";
 import { Users, Target, Lightbulb, Award, Handshake, ShieldCheck } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const valueIcons: Record<string, React.ElementType> = {
   Innovation: Lightbulb,
@@ -31,7 +34,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
         {/* ── Heading ── */}
-        <div className="text-center">
+        <ScrollReveal animation="fade-up" duration={500} className="text-center">
           <div className="w-10 h-1 rounded-full bg-blue-600 mx-auto mb-6" />
           <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal">About</p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
@@ -41,12 +44,12 @@ export function AboutSection() {
             Learn about our mission, values, and commitment to delivering innovative
             IT and AI solutions.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* ── Our Story ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left — text */}
-          <div className="space-y-5">
+          <ScrollReveal animation="fade-right" duration={600} className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800/50 bg-blue-50 dark:bg-blue-950/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               <Users className="w-3.5 h-3.5" />
               Our Story
@@ -58,10 +61,10 @@ export function AboutSection() {
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed text-sm md:text-base">
               {aboutInfo.background}
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Right — stats grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <ScrollReveal animation="fade-left" duration={600} className="grid grid-cols-2 gap-4">
             {stats.map((s) => (
               <div
                 key={s.label}
@@ -73,84 +76,92 @@ export function AboutSection() {
                 </p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* ── Mission ── */}
-        <div
-          className="relative rounded-2xl overflow-hidden p-8 md:p-12"
-          style={{
-            background: "linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%)",
-          }}
-        >
-          {/* Decorative grid */}
+        <ScrollReveal animation="fade-up" duration={600}>
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.04]"
+            className="relative rounded-2xl overflow-hidden p-8 md:p-12"
             style={{
-              backgroundImage:
-                "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-              backgroundSize: "40px 40px",
+              background: "linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%)",
             }}
-          />
-          <div className="relative flex flex-col md:flex-row md:items-center gap-8">
-            <div className="flex-shrink-0">
-              <div className="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                <Target className="w-7 h-7 text-blue-400" />
+          >
+            {/* Decorative grid */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+                backgroundSize: "40px 40px",
+              }}
+            />
+            <div className="relative flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-shrink-0">
+                <div className="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                  <Target className="w-7 h-7 text-blue-400" />
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-400 mb-3">
+                  Our Mission
+                </p>
+                <p className="text-lg md:text-xl font-medium text-white leading-relaxed">
+                  {aboutInfo.mission}
+                </p>
               </div>
             </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-400 mb-3">
-                Our Mission
-              </p>
-              <p className="text-lg md:text-xl font-medium text-white leading-relaxed">
-                {aboutInfo.mission}
-              </p>
-            </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* ── Values ── */}
         <div>
-          <div className="text-center mb-10">
+          <ScrollReveal animation="fade-up" duration={500} className="text-center mb-10">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-2">
               What Drives Us
             </p>
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white">
               Our Values
             </h3>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {aboutInfo.values.map((value) => {
+            {aboutInfo.values.map((value, i) => {
               const [title, description] = value.split(": ");
               const Icon = valueIcons[title] ?? Lightbulb;
               const colors = valueAccents[title] ?? { accent: "#2563eb", bg: "rgba(37,99,235,0.08)" };
               return (
-                <div
+                <ScrollReveal
                   key={title}
-                  className="group flex items-start gap-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                  animation="fade-up"
+                  delay={i * 75}
+                  duration={550}
                 >
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200"
-                    style={{ background: colors.bg }}
+                    className="group flex items-start gap-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 h-full"
                   >
-                    <Icon
-                      className="w-5 h-5"
-                      style={{ color: colors.accent }}
-                    />
-                  </div>
-                  <div>
-                    <h4
-                      className="text-sm font-semibold mb-2"
-                      style={{ color: colors.accent }}
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-200"
+                      style={{ background: colors.bg }}
                     >
-                      {title}
-                    </h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                      {description}
-                    </p>
+                      <Icon
+                        className="w-5 h-5"
+                        style={{ color: colors.accent }}
+                      />
+                    </div>
+                    <div>
+                      <h4
+                        className="text-sm font-semibold mb-2"
+                        style={{ color: colors.accent }}
+                      >
+                        {title}
+                      </h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                        {description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>

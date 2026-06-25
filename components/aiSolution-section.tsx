@@ -1,3 +1,5 @@
+"use client";
+
 import {
     BrainCircuit,
     MessageSquare,
@@ -7,6 +9,7 @@ import {
     Sparkles,
 } from "lucide-react";
 import { aiSolutions } from "@/lib/data/ai-solutions";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const iconMap: Record<string, React.ElementType> = {
     BrainCircuit,
@@ -57,14 +60,14 @@ export function AISolutionsSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* ── Heading ── */}
-                <div className="mb-14">
+                <ScrollReveal animation="fade-up" duration={500} className="mb-14">
                     <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 dark:border-purple-800/50 bg-purple-50 dark:bg-purple-950/30 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-purple-600 dark:text-purple-400 mb-6">
                         <Sparkles className="w-3.5 h-3.5" />
                         Artificial Intelligence
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                         <div>
-                            <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 font-normal leading-snug">
+                            <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal leading-snug">
                                 Harness the power of
                             </p>
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1 leading-snug">
@@ -82,16 +85,21 @@ export function AISolutionsSection() {
                             Discuss a project →
                         </a>
                     </div>
-                </div>
+                </ScrollReveal>
 
                 {/* ── Cards grid ── */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {solutions.map((sol) => {
+                    {solutions.map((sol, i) => {
                         const Icon = sol.IconComp;
                         return (
+                          <ScrollReveal
+                            key={sol.id}
+                            animation="fade-up"
+                            delay={i * 75}
+                            duration={550}
+                          >
                             <div
-                                key={sol.id}
-                                className="group relative rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-7 flex flex-col gap-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                                className="group relative rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 p-7 flex flex-col gap-5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full"
                             >
                                 {/* Subtle top gradient bar */}
                                 <div
@@ -144,46 +152,49 @@ export function AISolutionsSection() {
                                     ))}
                                 </ul>
                             </div>
+                          </ScrollReveal>
                         );
                     })}
                 </div>
 
                 {/* ── Bottom CTA banner ── */}
-                <div
-                    className="mt-10 relative rounded-2xl overflow-hidden px-8 py-9 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
-                    style={{
-                        background: "linear-gradient(135deg,#4c1d95 0%,#1e3a5f 60%,#0f172a 100%)",
-                    }}
-                >
-                    {/* Grid texture */}
-                    <div
-                        className="pointer-events-none absolute inset-0 opacity-[0.04]"
-                        style={{
-                            backgroundImage:
-                                "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
-                            backgroundSize: "40px 40px",
-                        }}
-                    />
-                    <div className="relative">
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-300 mb-2">
-                            Ready to get started?
-                        </p>
-                        <h3 className="text-lg font-bold text-white">
-                            Let&apos;s build something intelligent together
-                        </h3>
-                        <p className="mt-1.5 text-sm text-slate-300 max-w-md">
-                            Talk to our AI specialists about how we can solve your specific
-                            business challenges.
-                        </p>
-                    </div>
-                    <a
-                        href="#contact"
-                        className="relative flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white dark:bg-slate-900/60 dark:hover:bg-slate-900 hover:bg-purple-50 transition-colors duration-150 border border-slate-100/10 dark:border-slate-800 px-6 py-3 text-sm font-semibold text-purple-700 dark:text-purple-300 shadow"
-                    >
-                        <Sparkles className="w-4 h-4" />
-                        Start a Conversation
-                    </a>
-                </div>
+                <ScrollReveal animation="fade-up" delay={150} duration={600}>
+                  <div
+                      className="mt-10 relative rounded-2xl overflow-hidden px-8 py-9 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+                      style={{
+                          background: "linear-gradient(135deg,#4c1d95 0%,#1e3a5f 60%,#0f172a 100%)",
+                      }}
+                  >
+                      {/* Grid texture */}
+                      <div
+                          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+                          style={{
+                              backgroundImage:
+                                  "linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px)",
+                              backgroundSize: "40px 40px",
+                          }}
+                      />
+                      <div className="relative">
+                          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-purple-300 mb-2">
+                              Ready to get started?
+                          </p>
+                          <h3 className="text-lg font-bold text-white">
+                              Let&apos;s build something intelligent together
+                          </h3>
+                          <p className="mt-1.5 text-sm text-slate-300 max-w-md">
+                              Talk to our AI specialists about how we can solve your specific
+                              business challenges.
+                          </p>
+                      </div>
+                      <a
+                          href="#contact"
+                          className="relative flex-shrink-0 inline-flex items-center gap-2 rounded-lg bg-white dark:bg-slate-900/60 dark:hover:bg-slate-900 hover:bg-purple-50 transition-colors duration-150 border border-slate-100/10 dark:border-slate-800 px-6 py-3 text-sm font-semibold text-purple-700 dark:text-purple-300 shadow"
+                      >
+                          <Sparkles className="w-4 h-4" />
+                          Start a Conversation
+                      </a>
+                  </div>
+                </ScrollReveal>
 
             </div>
         </section>

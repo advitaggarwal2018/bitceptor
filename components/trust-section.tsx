@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import industryImg from "@/public/Assets/Industry.svg";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export function TrustSection() {
   return (
@@ -12,7 +13,7 @@ export function TrustSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT — text content */}
-          <div className="space-y-6">
+          <ScrollReveal animation="fade-right" duration={600} className="space-y-6">
             {/* Accent bar */}
             <div className="w-10 h-1 rounded-full bg-blue-600" />
 
@@ -43,10 +44,10 @@ export function TrustSection() {
               See more information
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-          </div>
+          </ScrollReveal>
 
           {/* RIGHT — image panel */}
-          <div className="relative">
+          <ScrollReveal animation="fade-left" duration={650} className="relative">
             {/* Main image container */}
             <div className="relative w-full aspect-[4/3] overflow-hidden transition-all duration-300">
               <Image
@@ -70,7 +71,7 @@ export function TrustSection() {
                 </p>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

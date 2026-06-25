@@ -53,7 +53,7 @@ export function HeroIllustration() {
 
             {/* Floating stat pills */}
             <StatPill icon={Cloud} label="Uptime" value="99.9%" className="top-4 right-0 md:right-4" />
-            <StatPill icon={BrainCircuit} label="AI Models" value="20+ Deployed" className="bottom-10 left-0 md:left-2" />
+            <StatPill icon={BrainCircuit} label="AI Models" value="20+ Deployed" className="bottom-0 left-0 md:left-2" />
         </div>
     );
 }

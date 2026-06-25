@@ -1,13 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
-/* ─────────────────────────────────────────────────────────────
-   Client data — replace `logo` with your actual <img> src or
-   Next.js <Image> once you have real assets.
-   `text` is the fallback rendered name shown when no logo src
-   is provided (makes the component work out-of-the-box).
-───────────────────────────────────────────────────────────── */
 const clients = [
     { id: "halosis", name: "HALOSIS", text: "HALOSIS" },
     { id: "ltimindtree", name: "LTIMindtree", text: "LTIMindtree" },
@@ -55,7 +50,6 @@ function LogoCard({ name, text }: { name: string; text: string }) {
       "
             title={name}
         >
-            {/* Replace this span with <img src={logo} alt={name} className="max-h-9 max-w-[120px] object-contain" /> */}
             <span className="
         text-[13px] font-semibold text-center leading-tight
         text-slate-500 dark:text-slate-400
@@ -110,19 +104,6 @@ function MarqueeRow({
 /* ─── Main section ───────────────────────────────────────────── */
 export function ClientsSection() {
     const [paused, setPaused] = useState(false);
-    const sectionRef = useRef<HTMLElement>(null);
-    const [visible, setVisible] = useState(false);
-
-    useEffect(() => {
-        const el = sectionRef.current;
-        if (!el) return;
-        const obs = new IntersectionObserver(
-            ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-            { threshold: 0.1 }
-        );
-        obs.observe(el);
-        return () => obs.disconnect();
-    }, []);
 
     return (
         <>
@@ -142,7 +123,6 @@ export function ClientsSection() {
       `}</style>
 
             <section
-                ref={sectionRef}
                 id="clients"
                 className="
           w-full py-16 md:py-24
@@ -156,13 +136,11 @@ export function ClientsSection() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                     {/* ── Heading ── */}
-                    <div
-                        className="text-center mb-14 transition-all duration-700"
-                        style={{
-                            opacity: visible ? 1 : 0,
-                            transform: visible ? "translateY(0)" : "translateY(20px)",
-                            transitionDelay: "0.05s",
-                        }}
+                    <ScrollReveal
+                        animation="fade-up"
+                        delay={50}
+                        duration={600}
+                        className="text-center mb-14"
                     >
                         <div className="w-10 h-1 rounded-full bg-blue-600 mx-auto mb-6" />
                         <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal leading-snug">
@@ -175,34 +153,28 @@ export function ClientsSection() {
                             From global enterprises to fast-growing startups, we've helped 50+ organisations
                             build, scale, and modernise their digital infrastructure.
                         </p>
-                    </div>
+                    </ScrollReveal>
 
                 </div>
 
-                {/* ── Marquee rows (full-bleed, no padding constraint) ── */}
-                <div
-                    className="flex flex-col gap-4 transition-all duration-700"
-                    style={{
-                        opacity: visible ? 1 : 0,
-                        transform: visible ? "translateY(0)" : "translateY(16px)",
-                        transitionDelay: "0.18s",
-                    }}
+                {/* ── Marquee rows ── */}
+                <ScrollReveal
+                    animation="fade-up"
+                    delay={150}
+                    duration={650}
+                    className="flex flex-col gap-4"
                 >
                     <MarqueeRow items={row1} paused={paused} />
                     <MarqueeRow items={row2} reverse paused={paused} />
-                </div>
+                </ScrollReveal>
 
                 {/* ── Static count strip ── */}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div
-                        className="
-              mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4
-              transition-all duration-700
-            "
-                        style={{
-                            opacity: visible ? 1 : 0,
-                            transitionDelay: "0.30s",
-                        }}
+                    <ScrollReveal
+                        animation="fade-up"
+                        delay={250}
+                        duration={650}
+                        className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
                     >
                         {[
                             { value: "50+", label: "Client Integrations" },
@@ -220,7 +192,7 @@ export function ClientsSection() {
                                 <span className="hidden sm:block w-px h-5 bg-slate-200 dark:bg-slate-700 last:hidden" />
                             </div>
                         ))}
-                    </div>
+                    </ScrollReveal>
                 </div>
 
             </section>

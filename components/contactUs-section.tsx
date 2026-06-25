@@ -1,6 +1,9 @@
+"use client";
+
 import { aboutInfo } from "@/lib/data/about";
 import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import ContactForm from "@/components/contact-form";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const contactDetails = [
   {
@@ -46,7 +49,7 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Heading ── */}
-        <div className="mb-12">
+        <ScrollReveal animation="fade-up" duration={500} className="mb-12">
           <div className="w-10 h-1 rounded-full bg-blue-600 mb-6" />
           <p className="text-2xl md:text-3xl text-slate-600 dark:text-slate-400 font-normal">Get in</p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
@@ -56,12 +59,12 @@ export function ContactSection() {
             We&apos;re here to help with your IT services and AI solutions needs.
             Reach out to discuss how we can support your business goals.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
           {/* LEFT — contact info + cards */}
-          <div className="space-y-4">
+          <ScrollReveal animation="fade-right" duration={600} className="space-y-4 w-full">
             {contactDetails.map((item) => {
               const Icon = item.icon;
               const inner = (
@@ -90,14 +93,14 @@ export function ContactSection() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 focus:outline-none w-full"
                 >
                   {inner}
                 </a>
               ) : (
                 <div
                   key={item.label}
-                  className="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4"
+                  className="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 px-5 py-4 w-full"
                 >
                   {inner}
                 </div>
@@ -105,7 +108,7 @@ export function ContactSection() {
             })}
 
             {/* Response time note */}
-            <div className="rounded-xl border border-blue-100 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-950/20 px-5 py-4">
+            <div className="rounded-xl border border-blue-100 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-950/20 px-5 py-4 w-full">
               <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-1">
                 Response Time
               </p>
@@ -115,18 +118,20 @@ export function ContactSection() {
                 urgent matters, please call us directly.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* RIGHT — contact form */}
-          <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-sm p-7 md:p-8">
-            <div className="mb-6">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Send us a message</h3>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                Fill out the form and we&apos;ll get back to you shortly.
-              </p>
+          <ScrollReveal animation="fade-left" duration={650} className="w-full">
+            <div className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900/80 shadow-sm p-7 md:p-8 w-full">
+              <div className="mb-6">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">Send us a message</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                  Fill out the form and we&apos;ll get back to you shortly.
+                </p>
+              </div>
+              <ContactForm />
             </div>
-            <ContactForm />
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>
