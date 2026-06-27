@@ -12,8 +12,35 @@ export function TrustSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT — text content */}
-          <ScrollReveal animation="fade-right" duration={600} className="space-y-6">
+          {/* LEFT — image panel */}
+          <ScrollReveal animation="fade-right" duration={650} className="relative">
+            {/* Main image container */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden transition-all duration-300">
+              <Image
+                src={industryImg}
+                alt="Industry Experience"
+                fill
+                priority
+                className="object-contain transition-all duration-300 dark:opacity-85 dark:brightness-90 dark:contrast-110"
+              />
+            </div>
+
+            {/* Floating stat badge */}
+            <div className="absolute -bottom-5 -left-4 sm:-left-6 flex items-center gap-3 bg-white dark:bg-slate-900 rounded-xl px-4 py-3 shadow-lg border border-slate-100 dark:border-slate-800">
+              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">5+</span>
+              </div>
+              <div className="leading-none">
+                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">Years of</p>
+                <p className="text-sm font-semibold text-slate-800 dark:text-white mt-0.5">
+                  Industry Experience
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* RIGHT — text content */}
+          <ScrollReveal animation="fade-left" duration={600} className="space-y-6 flex flex-col lg:items-end lg:text-right">
             {/* Accent bar */}
             <div className="w-10 h-1 rounded-full bg-blue-600" />
 
@@ -26,7 +53,7 @@ export function TrustSection() {
               </h2>
             </div>
 
-            <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-md">
+            <p className="text-slate-500 dark:text-slate-400 leading-relaxed max-w-lg lg:ml-auto">
               We{" "}
               <span className="text-blue-600 dark:text-blue-400 font-medium">
                 add technology capacity
@@ -44,33 +71,6 @@ export function TrustSection() {
               See more information
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-          </ScrollReveal>
-
-          {/* RIGHT — image panel */}
-          <ScrollReveal animation="fade-left" duration={650} className="relative">
-            {/* Main image container */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden transition-all duration-300">
-              <Image
-                src={industryImg}
-                alt="Industry Experience"
-                fill
-                priority
-                className="object-contain transition-all duration-300 dark:opacity-85 dark:brightness-90 dark:contrast-110"
-              />
-            </div>
-
-            {/* Floating stat badge */}
-            <div className="absolute -bottom-5 -left-5 flex items-center gap-3 bg-white dark:bg-slate-900 rounded-xl px-4 py-3 shadow-lg border border-slate-100 dark:border-slate-800">
-              <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
-                <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">5+</span>
-              </div>
-              <div className="leading-none">
-                <p className="text-xs text-slate-400 dark:text-slate-500 font-medium">Years of</p>
-                <p className="text-sm font-semibold text-slate-800 dark:text-white mt-0.5">
-                  Industry Experience
-                </p>
-              </div>
-            </div>
           </ScrollReveal>
 
         </div>

@@ -34,7 +34,17 @@ export function Navbar() {
                 <div className="flex h-16 items-center justify-between">
 
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2.5 group focus:outline-none">
+                    <Link
+                        href="/"
+                        onClick={(e) => {
+                            setOpen(false);
+                            if (window.location.pathname === "/" || window.location.pathname === "") {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                        }}
+                        className="flex items-center gap-2.5 group focus:outline-none"
+                    >
                         <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shadow-md shadow-blue-500/10 transition-transform duration-200 group-hover:scale-105">
                             <Image src={logo} alt="Bitceptor" width={32} height={32} className="object-cover" />
                         </div>
