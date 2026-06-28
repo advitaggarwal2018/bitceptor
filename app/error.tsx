@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
+import Link from 'next/link';
+
 export default function Error({
   error,
   reset,
@@ -27,7 +29,7 @@ export default function Error({
           Try Again
         </Button>
         <Button variant="outline" asChild>
-          <a href="/">Return Home</a>
+          <Link href="/">Return Home</Link>
         </Button>
       </div>
     </div>

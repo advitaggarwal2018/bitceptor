@@ -29,19 +29,19 @@ export default function ServiceCard({
   const accentClasses = {
     border:
       accentColor === 'blue'
-        ? 'border-slate-200 hover:border-blue-300'
-        : 'border-slate-200 hover:border-purple-300',
+        ? 'border-slate-200 hover:border-blue-300 dark:border-slate-800 dark:hover:border-blue-800'
+        : 'border-slate-200 hover:border-purple-300 dark:border-slate-800 dark:hover:border-purple-800',
     iconBg: accentColor === 'blue'
-      ? 'bg-gradient-to-br from-slate-100 to-slate-200 ring-2 ring-blue-400/30'
-      : 'bg-gradient-to-br from-slate-100 to-slate-200 ring-2 ring-purple-400/30',
-    icon: accentColor === 'blue' ? 'text-blue-600' : 'text-purple-600',
-    bullet: accentColor === 'blue' ? 'text-blue-500' : 'text-purple-500',
+      ? 'bg-gradient-to-br from-slate-100 to-slate-200 ring-2 ring-blue-400/30 dark:from-slate-800 dark:to-slate-900 dark:ring-blue-900/30'
+      : 'bg-gradient-to-br from-slate-100 to-slate-200 ring-2 ring-purple-400/30 dark:from-slate-800 dark:to-slate-900 dark:ring-purple-900/30',
+    icon: accentColor === 'blue' ? 'text-blue-600 dark:text-blue-400' : 'text-purple-600 dark:text-purple-400',
+    bullet: accentColor === 'blue' ? 'text-blue-500 dark:text-blue-400' : 'text-purple-500 dark:text-purple-400',
     hoverShadow: accentColor === 'blue'
-      ? 'hover:shadow-blue-200/50'
-      : 'hover:shadow-purple-200/50',
+      ? 'hover:shadow-blue-200/50 dark:hover:shadow-blue-950/50'
+      : 'hover:shadow-purple-200/50 dark:hover:shadow-purple-950/50',
     cardBg: accentColor === 'blue'
-      ? 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30'
-      : 'bg-gradient-to-br from-slate-50 via-white to-purple-50/30',
+      ? 'bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900/60 dark:via-slate-950 dark:to-blue-950/20'
+      : 'bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-slate-900/60 dark:via-slate-950 dark:to-purple-950/20',
   };
 
   return (
@@ -66,7 +66,7 @@ export default function ServiceCard({
           </div>
         )}
         <div className="flex-1">
-          <CardTitle className="text-xl font-semibold mb-2 group-hover:text-slate-900 transition-colors">
+          <CardTitle className="text-xl font-semibold mb-2 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
             {title}
           </CardTitle>
           <CardDescription className="text-base leading-relaxed">
